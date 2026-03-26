@@ -1,0 +1,242 @@
+/* ═══════════════════════════════════════════════════════════════
+   TVA DESIGN SYSTEM — TIME VARIANCE AUTHORITY
+   "For All Time. Always."
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── CSS Custom Properties ── */
+:root {
+  /* Core TVA Palette */
+  --tva-black: #0a0a0a;
+  --tva-dark: #111111;
+  --tva-dark-2: #1a1a1a;
+  --tva-dark-3: #222222;
+  --tva-orange: #e8720c;
+  --tva-orange-bright: #ff8c1a;
+  --tva-orange-dim: #c45a00;
+  --tva-amber: #d4a843;
+  --tva-amber-dim: #8a6f2e;
+  --tva-green: #33cc33;
+  --tva-green-dim: #1a7a1a;
+  --tva-red: #cc3333;
+  --tva-grey: #3a3a3a;
+  --tva-grey-light: #666666;
+  --tva-text: #e0d5c0;
+  --tva-text-dim: #8a7f6e;
+
+  /* Typography */
+  --font-mono: 'Share Tech Mono', 'Courier Prime', 'Courier New', monospace;
+  --font-size-xs: 0.65rem;
+  --font-size-sm: 0.8rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.8rem;
+  --font-size-2xl: 2.5rem;
+  --font-size-3xl: 3.5rem;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 5rem;
+
+  /* Borders */
+  --border-thin: 1px solid var(--tva-orange);
+  --border-dim: 1px solid var(--tva-grey);
+  --border-amber: 1px solid var(--tva-amber-dim);
+
+  /* Effects */
+  --glow-orange: 0 0 10px rgba(232, 114, 12, 0.3), 0 0 20px rgba(232, 114, 12, 0.1);
+  --glow-orange-strong: 0 0 15px rgba(232, 114, 12, 0.5), 0 0 30px rgba(232, 114, 12, 0.2);
+  --glow-text: 0 0 8px rgba(232, 114, 12, 0.4);
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--tva-black);
+  color: var(--tva-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: default;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--tva-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--tva-orange-dim);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tva-orange);
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--tva-orange);
+  color: var(--tva-black);
+}
+
+/* ── Links ── */
+a {
+  color: var(--tva-orange);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: var(--tva-orange-bright);
+  text-shadow: var(--glow-text);
+}
+
+/* ── Utility Classes ── */
+.section {
+  padding: var(--space-2xl) var(--space-lg);
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-header {
+  font-size: var(--font-size-xs);
+  color: var(--tva-orange);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.section-header::before {
+  content: '▸';
+  color: var(--tva-orange);
+}
+
+.section-title {
+  font-size: var(--font-size-xl);
+  color: var(--tva-text);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: var(--border-dim);
+}
+
+.orange-text {
+  color: var(--tva-orange);
+}
+
+.amber-text {
+  color: var(--tva-amber);
+}
+
+.dim-text {
+  color: var(--tva-text-dim);
+  font-size: var(--font-size-sm);
+}
+
+/* ── Keyframe Animations ── */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  3% { opacity: 0.9; }
+  6% { opacity: 1; }
+  7.5% { opacity: 0.85; }
+  9% { opacity: 1; }
+  50% { opacity: 1; }
+  52% { opacity: 0.92; }
+  54% { opacity: 1; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes typewriter-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dataStream {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: var(--glow-orange); }
+  50% { box-shadow: var(--glow-orange-strong); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes bootText {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  :root {
+    --font-size-3xl: 2rem;
+    --font-size-2xl: 1.6rem;
+    --font-size-xl: 1.3rem;
+  }
+
+  .section {
+    padding: var(--space-xl) var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-3xl: 1.5rem;
+    --font-size-2xl: 1.3rem;
+    --font-size-xl: 1.1rem;
+  }
+}
