@@ -1434,6 +1434,11 @@
   color: var(--tva-text-dim);
 }
 
+.status-inprogress {
+  color: #4fc3f7;
+  animation: blink 2s ease-in-out infinite;
+}
+
 .project-id {
   font-size: var(--font-size-xs);
   color: var(--tva-text-dim);
