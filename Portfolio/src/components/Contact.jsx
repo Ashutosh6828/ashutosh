@@ -160,7 +160,7 @@ export default function Contact() {
                 <div className="contact-channels">
                     <div className="channel-header">SECURE CHANNELS</div>
 
-                    <a href="https://github.com/ashutosh" target="_blank" rel="noopener noreferrer" className="channel-link">
+                    <a href="https://github.com/Ashutosh6828" target="_blank" rel="noopener noreferrer" className="channel-link">
                         <span className="channel-icon">◈</span>
                         <span className="channel-name">GitHub</span>
                         <span className="channel-status">ENCRYPTED</span>
@@ -170,7 +170,7 @@ export default function Contact() {
                         <span className="channel-name">LinkedIn</span>
                         <span className="channel-status">ENCRYPTED</span>
                     </a>
-                    <a href="https://twitter.com/ashutosh" target="_blank" rel="noopener noreferrer" className="channel-link">
+                    <a href="https://x.com/A_FOR_AVENGERS" target="_blank" rel="noopener noreferrer" className="channel-link">
                         <span className="channel-icon">◈</span>
                         <span className="channel-name">X / Twitter</span>
                         <span className="channel-status">ENCRYPTED</span>
