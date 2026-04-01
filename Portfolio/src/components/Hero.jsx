@@ -47,8 +47,14 @@ const LOKI_QUOTES = [
     '"What makes a Loki a Loki is that we survive."',
     '"I know what kind of god I need to be — for you. For all of us."',
 ]
+const DOOM_QUOTES = [
+    '"Doom is no man\'s second choice."',
+    '"All hope lies in Doom."',
+    '"I am Doom... Destroyer of Worlds... What are you?"',
+    '"Imagine! I now possess the power to end all hunger! To make the world a paradise! But I chose instead... to destroy you!"',
+]
 
-export default function Hero({ playAudio }) {
+export default function Hero({ playAudio, isDoomMode }) {
     const [phase, setPhase] = useState('cycling') // cycling | settling | done
     const [charStates, setCharStates] = useState(
         FINAL_NAME.split('').map(ch => ({
@@ -207,12 +213,14 @@ export default function Hero({ playAudio }) {
 
                 <div
                     className="hero-loki-quote"
-                    onClick={() => playAudio?.('glorious')}
-                    title="Click for Glorious Purpose"
+                    onClick={() => playAudio?.(isDoomMode ? 'konami' : 'glorious')}
+                    title={isDoomMode ? "Click for Ascension" : "Click for Glorious Purpose"}
                     style={{ cursor: 'pointer' }}
                 >
                     <span className="loki-quote-mark">❝</span>
-                    <span className="loki-quote-text" key={lokiQuote}>{LOKI_QUOTES[lokiQuote]}</span>
+                    <span className="loki-quote-text" key={`${lokiQuote}-${isDoomMode}`}>
+                        {isDoomMode ? DOOM_QUOTES[lokiQuote % DOOM_QUOTES.length] : LOKI_QUOTES[lokiQuote]}
+                    </span>
                 </div>
 
                 <div className="hero-status">

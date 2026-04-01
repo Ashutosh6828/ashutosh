@@ -173,7 +173,7 @@ export default function App() {
 
       <div className={`main-content ${booted ? 'main-content-visible' : ''}`}>
         <Navbar playAudio={playAudio} />
-        <Hero playAudio={playAudio} />
+        <Hero playAudio={playAudio} isDoomMode={doomMode} />
 
         {booted && (
           <Suspense fallback={<div className="tva-loader">Loading Archives...</div>}>
