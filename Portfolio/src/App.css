@@ -14,6 +14,12 @@
   filter: hue-rotate(90deg) saturate(2);
 }
 
+.app-transitioning {
+  animation: jitter 0.1s infinite !important;
+  filter: contrast(1.2) brightness(1.1) !important;
+  pointer-events: none;
+}
+
 .main-content {
   opacity: 0;
   transition: opacity 0.8s ease;
@@ -153,16 +159,23 @@
 }
 
 .app-doom {
-  /* Swap palette from TVA warm orange to DOOM cool silver and neon green */
-  --tva-orange: #a9b8c2;
-  /* Metallic silver */
-  --tva-orange-bright: #ffffff;
-  /* Stark white */
+  /* TOXIC GREEN THEME OVERRIDE — Whole theme goes green */
+  --tva-orange: #00ff44;
+  --tva-orange-bright: #33ff66;
+  --tva-orange-dim: #008822;
+  --tva-amber: #55ff00;
+  --tva-amber-dim: #228800;
   --tva-green: #00ff55;
-  /* Doom neon green */
-  --glow-text: 0 0 10px rgba(0, 255, 85, 0.4), 0 0 20px rgba(0, 255, 85, 0.2);
+  --tva-green-dim: #008822;
+  --tva-red: #00ee11; /* Danger is now intense neon green */
+  --tva-grey: #004d1a;
+  --tva-grey-light: #008833;
+  --tva-text: #ccffdd;
+  --tva-text-dim: #44aa66;
+  --glow-orange: 0 0 10px rgba(0, 255, 68, 0.4), 0 0 20px rgba(0, 255, 68, 0.2);
+  --glow-orange-strong: 0 0 15px rgba(0, 255, 68, 0.6), 0 0 30px rgba(0, 255, 68, 0.3);
+  --glow-text: 0 0 8px rgba(0, 255, 85, 0.5);
   --bg-color: #000c05;
-  /* Deep dark green backdrop */
 }
 
 @keyframes bgPulse {
@@ -2689,4 +2702,18 @@ Let's put Media Player on the bottom-LEFT so it doesn't collide with Miss Minute
   100% {
     transform: rotate(360deg);
   }
+}
+/* -- DOOM TRANSITION JITTER -- */
+@keyframes jitter {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); filter: hue-rotate(0deg); }
+  10% { transform: translate(-4px, -2px) scale(1.02) rotate(-0.5deg); filter: hue-rotate(10deg); }
+  20% { transform: translate(4px, 2px) scale(0.98) rotate(0.5deg); filter: hue-rotate(-10deg); }
+  30% { transform: translate(-4px, 2px) scale(1.01) rotate(-0.2deg); filter: hue-rotate(20deg); }
+  40% { transform: translate(4px, -2px) scale(0.99) rotate(0.2deg); filter: hue-rotate(-20deg); }
+  50% { transform: translate(-2px, 1px) scale(1) rotate(0deg); filter: hue-rotate(0deg); }
+  60% { transform: translate(2px, -1px) scale(1.02) rotate(0.5deg); filter: hue-rotate(15deg); }
+  70% { transform: translate(-4px, 0) scale(0.98) rotate(-0.5deg); filter: hue-rotate(-15deg); }
+  80% { transform: translate(4px, 0) scale(1.01) rotate(0.2deg); filter: hue-rotate(5deg); }
+  90% { transform: translate(0, -4px) scale(0.99) rotate(-0.2deg); filter: hue-rotate(-5deg); }
+  100% { transform: translate(0, 4px) scale(1.02) rotate(0deg); filter: hue-rotate(0deg); }
 }
