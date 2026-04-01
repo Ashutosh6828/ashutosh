@@ -237,6 +237,24 @@ export default function Hero({ playAudio }) {
                     </div>
                 </div>
 
+                {/* ── TEMPORAL SOCIAL BAR ── */}
+                <div className="hero-socials">
+                    <a href="https://github.com/Ashutosh6828" target="_blank" rel="noopener noreferrer" className="hero-social-link" title="GitHub Access">
+                        <span className="social-icon">GITHUB</span>
+                        <span className="social-glitch" aria-hidden="true">GITHUB</span>
+                    </a>
+                    <span className="social-divider" />
+                    <a href="https://x.com/A_FOR_AVENGERS" target="_blank" rel="noopener noreferrer" className="hero-social-link" title="X Terminal">
+                        <span className="social-icon">X / TWITTER</span>
+                        <span className="social-glitch" aria-hidden="true">X / TWITTER</span>
+                    </a>
+                    <span className="social-divider" />
+                    <a href="https://www.linkedin.com/in/ashutoshmaharana004/" target="_blank" rel="noopener noreferrer" className="hero-social-link" title="LinkedIn Secure">
+                        <span className="social-icon">LINKEDIN</span>
+                        <span className="social-glitch" aria-hidden="true">LINKEDIN</span>
+                    </a>
+                </div>
+
                 <div className="hero-scroll-hint">
                     <span>▾ SCROLL TO ACCESS FILE ▾</span>
                 </div>
