@@ -7,6 +7,7 @@
 .app {
   position: relative;
   min-height: 100vh;
+  z-index: 1; /* sit above the fixed ParticleCanvas at z-index:0 */
 }
 
 .app-glitch {
@@ -87,7 +88,9 @@
   max-width: 550px;
   height: 300px;
   border: var(--border-thin);
-  background: var(--tva-dark);
+  background: var(--glass-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -99,7 +102,7 @@
   gap: var(--space-md);
   padding: var(--space-xs) var(--space-md);
   border-bottom: var(--border-thin);
-  background: var(--tva-dark-2);
+  background: var(--glass-dark-2);
   flex-shrink: 0;
 }
 
@@ -208,9 +211,10 @@
 }
 
 .navbar-scrolled {
-  background: rgba(10, 10, 10, 0.95);
+  background: var(--glass-dark);
   border-bottom: 1px solid var(--tva-grey);
-  backdrop-filter: blur(10px);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   padding: var(--space-sm) var(--space-lg);
 }
 
@@ -808,7 +812,9 @@
 
 .case-file {
   border: var(--border-thin);
-  background: var(--tva-dark);
+  background: var(--glass-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   overflow: hidden;
 }
 
@@ -920,13 +926,15 @@
   align-items: center;
   gap: var(--space-sm);
   padding: var(--space-md);
-  background: var(--tva-dark);
+  background: var(--glass-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   transition: all 0.3s ease;
   cursor: default;
 }
 
 .cf-field-active {
-  background: var(--tva-dark-2);
+  background: var(--glass-dark-2);
   box-shadow: inset 2px 0 0 var(--tva-orange);
 }
 
@@ -987,7 +995,9 @@
 
 .cf-notes {
   padding: var(--space-lg) var(--space-xl);
-  background: var(--tva-dark-2);
+  background: var(--glass-dark-2);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   margin: 0 var(--space-xl);
   border: var(--border-dim);
 }
@@ -1091,7 +1101,9 @@
 
 .skill-category {
   border: var(--border-dim);
-  background: var(--tva-dark);
+  background: var(--glass-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   padding: var(--space-lg);
 }
 
@@ -1183,7 +1195,9 @@
   margin-bottom: var(--space-lg);
   padding: var(--space-md);
   border-left: 2px solid var(--tva-orange-dim);
-  background: var(--tva-dark);
+  background: var(--glass-dark-3);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
 }
 
 .timeline {
@@ -1365,7 +1379,9 @@
 
 .project-card {
   border: var(--border-dim);
-  background: var(--tva-dark);
+  background: var(--glass-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   padding: 0;
   text-align: left;
   transition: all 0.3s ease;
@@ -1976,7 +1992,9 @@
 
 .contact-terminal {
   border: var(--border-thin);
-  background: var(--tva-dark);
+  background: var(--glass-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   overflow: hidden;
 }
 
@@ -1985,7 +2003,7 @@
   align-items: center;
   gap: var(--space-sm);
   padding: var(--space-sm) var(--space-md);
-  background: var(--tva-dark-2);
+  background: var(--glass-dark-2);
   border-bottom: var(--border-thin);
 }
 

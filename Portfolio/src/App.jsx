@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect, lazy, Suspense } from 'react'
 import './App.css'
 import ScanLines from './components/ScanLines'
+import ParticleCanvas from './components/ParticleCanvas'
 import BootSequence from './components/BootSequence'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -136,6 +137,8 @@ export default function App() {
 
   return (
     <div className={`app ${transitioning ? 'app-transitioning' : ''} ${doomMode ? 'app-doom' : ''}`}>
+      {/* Dynamic particle neural network canvas — renders behind all content */}
+      <ParticleCanvas isDoomMode={doomMode} />
       <ScanLines />
 
       {/* Rotating Media Player Mute Toggle */}
